@@ -840,9 +840,8 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Submitting...';
 
-      // TODO: replace with your CRM / lead-capture endpoint (Google Sheets webhook, HubSpot, Zoho, etc.)
-      var LEAD_ENDPOINT = '';
-      var payload = Object.fromEntries(new FormData(form).entries());
+      // PHP endpoint that validates, logs to leads.csv and emails the sales team — see submit-form.php
+      var LEAD_ENDPOINT = 'submit-form.php';
 
       function showSuccess(){
         form.classList.add('hide');
@@ -853,20 +852,26 @@
         }
       }
 
-      if (LEAD_ENDPOINT) {
-        fetch(LEAD_ENDPOINT, {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify(payload)
-        }).then(showSuccess).catch(function(){
-          submitBtn.disabled = false;
-          submitBtn.textContent = originalLabel;
-          alert('Something went wrong. Please call us directly at +91-124-456-7890.');
-        });
-      } else {
-        // No endpoint configured yet — show success so UX can be tested end-to-end.
-        setTimeout(showSuccess, 400);
+      function showError(message){
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+        alert(message || 'Something went wrong. Please call us directly at +91-124-456-7890.');
       }
+
+      fetch(LEAD_ENDPOINT, {
+        method: 'POST',
+        body: new FormData(form)
+      }).then(function(res){
+        return res.json().catch(function(){ return { success: res.ok }; });
+      }).then(function(data){
+        if (data && data.success) {
+          showSuccess();
+        } else {
+          showError(data && data.message);
+        }
+      }).catch(function(){
+        showError();
+      });
     });
   }
 
