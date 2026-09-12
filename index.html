@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DLF Aureva | Luxury Senior Living Residences, Golf Course Extension Road, Gurugram</title>
+<meta name="description" content="DLF Aureva — 4 BHK + Utility independent senior living residences up to 4,200 sq.ft. on Golf Course Extension Road, Gurugram. On-site healthcare with Medanta. Register for priority access.">
+<meta name="robots" content="index, follow">
+<!-- Open Graph -->
+<meta property="og:title" content="DLF Aureva | Luxury Senior Living on Golf Course Extension Road, Gurugram">
+<meta property="og:description" content="172 exclusive 4 BHK + Utility residences. On-site healthcare with Medanta. Register now for priority access & best launch pricing.">
+<meta property="og:type" content="website">
+<style>
+  :root{
+    --ink:#12130f;
+    --paper:#faf7f1;
+    --paper-2:#f2ede2;
+    --gold:#a9812f;
+    --gold-2:#7d5f22;
+    --gold-soft:#e7d7ad;
+    --line:rgba(18,19,15,0.12);
+    --green:#1f6d4a;
+    --err:#b3261e;
+    --radius:14px;
+    --maxw:1180px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family:ui-serif,Georgia,"Times New Roman",serif;
+    font-weight:600;
+    line-height:1.15;
+    margin:0 0 .5em;
+    letter-spacing:.2px;
+  }
+  p{margin:0 0 1em;}
+  img,svg{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:12px;
+    font-weight:700;
+    color:var(--gold-2);
+    margin-bottom:10px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    border:none;
+    border-radius:999px;
+    padding:14px 26px;
+    font-size:15px;
+    font-weight:700;
+    cursor:pointer;
+    text-decoration:none;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    font-family:inherit;
+  }
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-2));color:#fff;box-shadow:0 8px 20px -6px rgba(122,90,20,.55);}
+  .btn-gold:hover{transform:translateY(-1px);box-shadow:0 10px 26px -6px rgba(122,90,20,.65);}
+  .btn-outline{background:transparent;border:1.5px solid var(--ink);color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--paper);}
+  .btn-block{width:100%;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,247,241,.92);
+    backdrop-filter:saturate(140%) blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+  .brand{display:flex;flex-direction:column;line-height:1;}
+  .brand .b1{font-family:ui-serif,Georgia,serif;font-weight:700;font-size:20px;letter-spacing:1px;}
+  .brand .b2{font-size:10px;letter-spacing:3px;color:var(--gold-2);font-weight:700;margin-top:3px;}
+  .nav-links{display:flex;gap:28px;align-items:center;}
+  .nav-links a{font-size:14px;font-weight:600;text-decoration:none;color:var(--ink);opacity:.8;}
+  .nav-links a:hover{opacity:1;}
+  .nav-cta{display:flex;gap:12px;align-items:center;}
+  .nav-phone{font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px 0;}
+
+  /* Hero */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(1200px 500px at 85% -10%, #fff6e0 0%, transparent 60%),
+      linear-gradient(180deg,#141410 0%, #1c1c16 55%, #141410 100%);
+    color:#f4f0e6;
+    padding:56px 0 70px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0 2px, transparent 2px 90px),
+      repeating-linear-gradient(25deg, rgba(255,255,255,.03) 0 1px, transparent 1px 70px);
+    pointer-events:none;
+  }
+  .hero-grid{
+    position:relative;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:48px;
+    align-items:start;
+  }
+  .hero h1{font-size:clamp(30px,4vw,50px);color:#fff;max-width:16ch;}
+  .hero .lede{font-size:17px;color:#d8d2c2;max-width:46ch;margin-bottom:22px;}
+  .hero-eyebrow{color:var(--gold-soft);}
+  .trust-row{display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0 30px;padding:0;list-style:none;}
+  .trust-row li{display:flex;align-items:center;gap:8px;font-size:13.5px;color:#e9e4d6;font-weight:600;}
+  .trust-row svg{width:16px;height:16px;flex:none;color:var(--gold-soft);}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+
+  /* Form card */
+  .form-card{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:20px;
+    padding:26px 24px 24px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.55);
+    border:1px solid rgba(255,255,255,.08);
+  }
+  .form-card h2{font-size:21px;margin-bottom:2px;}
+  .form-card .sub{font-size:13.5px;color:#5b5648;margin-bottom:16px;}
+  .field{margin-bottom:12px;}
+  .field label{display:block;font-size:12.5px;font-weight:700;margin-bottom:5px;color:#3a3728;}
+  .field input,.field select{
+    width:100%;
+    padding:12px 13px;
+    border:1.4px solid #ddd4bf;
+    border-radius:10px;
+    font-size:15px;
+    font-family:inherit;
+    background:#fff;
+    color:var(--ink);
+  }
+  .field input:focus,.field select:focus{outline:2px solid var(--gold);border-color:var(--gold);}
+  .field.error input{border-color:var(--err);}
+  .field .err-msg{display:none;color:var(--err);font-size:12px;margin-top:4px;font-weight:600;}
+  .field.error .err-msg{display:block;}
+  .consent{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#5b5648;margin:12px 0 14px;}
+  .consent input{margin-top:3px;}
+  .micro-trust{display:flex;align-items:center;gap:8px;font-size:12px;color:#6b6656;margin-top:12px;justify-content:center;}
+  .form-success{display:none;text-align:center;padding:20px 6px;}
+  .form-success.show{display:block;}
+  .form-success svg{width:44px;height:44px;color:var(--green);margin:0 auto 10px;}
+  .form-success h3{margin-bottom:6px;font-size:19px;}
+  #enquiryForm.hide{display:none;}
+
+  /* Stats strip */
+  .stats{
+    background:var(--ink);
+    color:#f4f0e6;
+    padding:22px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center;}
+  .stats-grid .num{font-family:ui-serif,Georgia,serif;font-size:clamp(22px,3vw,32px);color:var(--gold-soft);}
+  .stats-grid .lbl{font-size:12.5px;letter-spacing:.5px;color:#c9c3b1;margin-top:2px;}
+
+  section{padding:76px 0;}
+  .section-head{max-width:660px;margin:0 auto 44px;text-align:center;}
+  .section-head h2{font-size:clamp(26px,3.4vw,38px);}
+  .section-head p{color:#544f40;font-size:16px;}
+
+  /* Why cards */
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .why-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 22px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .why-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -22px rgba(0,0,0,.25);}
+  .why-card .ic{
+    width:44px;height:44px;border-radius:12px;
+    background:linear-gradient(135deg,var(--gold-soft),#fff);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:14px;
+  }
+  .why-card .ic svg{width:22px;height:22px;color:var(--gold-2);}
+  .why-card h3{font-size:17.5px;margin-bottom:6px;}
+  .why-card p{font-size:14.5px;color:#5b5648;margin:0;}
+
+  /* Location */
+  .location{background:var(--paper-2);}
+  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
+  .loc-panel{
+    background:linear-gradient(160deg,#22231b,#12130f);
+    border-radius:20px;
+    aspect-ratio:4/3;
+    position:relative;
+    overflow:hidden;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .loc-panel svg{width:70%;height:70%;color:var(--gold-soft);opacity:.85;}
+  .loc-list{list-style:none;padding:0;margin:18px 0 0;}
+  .loc-list li{
+    display:flex;gap:12px;align-items:flex-start;
+    padding:12px 0;border-bottom:1px solid var(--line);
+    font-size:15px;
+  }
+  .loc-list li:last-child{border-bottom:none;}
+  .loc-list svg{width:18px;height:18px;flex:none;color:var(--gold-2);margin-top:2px;}
+
+  /* Amenities */
+  .amen-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .amen-item{
+    text-align:center;
+    padding:22px 10px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:#fff;
+  }
+  .amen-item .ic{width:38px;height:38px;margin:0 auto 10px;color:var(--gold-2);}
+  .amen-item span{font-size:13px;font-weight:700;color:#3a3728;}
+
+  /* Configuration */
+  .config-band{
+    background:linear-gradient(135deg,#1c1c16,#12130f);
+    color:#f4f0e6;
+    border-radius:22px;
+    padding:44px 36px;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:36px;
+    align-items:center;
+  }
+  .config-band h2{color:#fff;}
+  .config-list{list-style:none;padding:0;margin:0 0 22px;}
+  .config-list li{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:14.5px;}
+  .config-list li span:first-child{color:#c9c3b1;}
+  .config-list li span:last-child{font-weight:700;color:var(--gold-soft);}
+  .config-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:26px;}
+  .config-card h3{color:#fff;font-size:18px;}
+  .config-card p{color:#c9c3b1;font-size:14px;}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;
+    padding:20px 4px;font-size:16px;font-weight:700;
+    display:flex;justify-content:space-between;align-items:center;cursor:pointer;
+    font-family:inherit;color:var(--ink);
+  }
+  .faq-q svg{width:18px;height:18px;flex:none;transition:transform .2s ease;color:var(--gold-2);}
+  .faq-item.open .faq-q svg{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .faq-a p{padding:0 4px 18px;color:#544f40;font-size:14.5px;}
+  .faq-item.open .faq-a{max-height:220px;}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(135deg,var(--gold-2),var(--gold));
+    color:#fff;
+    border-radius:22px;
+    padding:44px 30px;
+    text-align:center;
+  }
+  .final-cta h2{color:#fff;}
+  .final-cta p{color:#fbeed0;max-width:520px;margin:0 auto 22px;}
+  .final-cta .btn-outline{border-color:#fff;color:#fff;}
+  .final-cta .btn-outline:hover{background:#fff;color:var(--gold-2);}
+
+  footer{background:#12130f;color:#9d987f;padding:44px 0 26px;font-size:13px;}
+  footer .fbrand{color:#fff;font-family:ui-serif,Georgia,serif;font-size:18px;margin-bottom:10px;}
+  footer .disclaimer{border-top:1px solid rgba(255,255,255,.1);margin-top:26px;padding-top:20px;font-size:11.5px;line-height:1.7;color:#7b775f;}
+  footer a{text-decoration:underline;}
+
+  /* Sticky mobile bar */
+  .mobile-bar{
+    display:none;
+    position:fixed;left:0;right:0;bottom:0;z-index:60;
+    background:#12130f;
+    padding:10px 14px;
+    gap:10px;
+    box-shadow:0 -8px 24px rgba(0,0,0,.25);
+  }
+  .mobile-bar a{flex:1;}
+  .mobile-bar .btn{width:100%;padding:12px;}
+
+  @media (max-width:980px){
+    .hero-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .loc-grid{grid-template-columns:1fr;}
+    .amen-grid{grid-template-columns:repeat(3,1fr);}
+    .config-band{grid-template-columns:1fr;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:640px){
+    .nav-links{display:none;}
+    .hamburger{display:block;}
+    .why-grid{grid-template-columns:1fr;}
+    .amen-grid{grid-template-columns:repeat(2,1fr);}
+    section{padding:52px 0;}
+    .mobile-bar{display:flex;}
+    body{padding-bottom:64px;}
+    .nav-phone{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <span class="b1">DLF · AUREVA</span>
+      <span class="b2">SECTOR 63 · GURUGRAM</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#why">Overview</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#location">Location</a>
+      <a href="#configuration">Configuration</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:+911244567890">📞 +91-124-456-7890</a>
+      <a class="btn btn-gold" href="#enquire" style="padding:10px 20px;font-size:13.5px;">Enquire Now</a>
+    </div>
+    <button class="hamburger" aria-label="Menu" id="hamburgerBtn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div id="mnav" class="wrap" style="display:none;flex-direction:column;gap:2px;padding-bottom:14px;"></div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow hero-eyebrow">Golf Course Extension Road, Gurugram</div>
+      <h1>DLF Aureva — India's Finest Address for Independent Senior Living</h1>
+      <p class="lede">Spacious 4 BHK + Utility residences up to 4,200 sq.ft., set within DLF Arbour's master-planned campus — with on-site healthcare in partnership with Medanta, The Medicity.</p>
+      <ul class="trust-row">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>75+ Years of DLF Legacy</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.65-9.5 9-9.5 9z"/></svg>On-Site Healthcare with Medanta</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Only 172 Exclusive Residences</li>
+      </ul>
+      <div class="hero-actions">
+        <a href="#enquire" class="btn btn-gold">Get Priority Access &amp; Price List</a>
+        <a href="tel:+911244567890" class="btn btn-outline" style="border-color:#e9e4d6;color:#f4f0e6;">Call Sales Team</a>
+      </div>
+    </div>
+
+    <div class="form-card" id="enquire">
+      <h2>Get Priority Access</h2>
+      <p class="sub">Register now for exclusive launch pricing &amp; floor plans.</p>
+
+      <form id="enquiryForm" novalidate>
+        <div class="field" data-field="name">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Enter your full name" required>
+          <div class="err-msg">Please enter your name.</div>
+        </div>
+        <div class="field" data-field="phone">
+          <label for="phone">Mobile Number</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="10-digit mobile number" inputmode="numeric" required>
+          <div class="err-msg">Please enter a valid 10-digit mobile number.</div>
+        </div>
+        <div class="field" data-field="email">
+          <label for="email">Email Address</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          <div class="err-msg">Please enter a valid email address.</div>
+        </div>
+        <div class="field">
+          <label for="interest">Configuration of Interest</label>
+          <select id="interest" name="interest">
+            <option value="4bhk_utility">4 BHK + Utility (~4,200 sq.ft.)</option>
+            <option value="not_sure">Not sure yet — send me all details</option>
+          </select>
+        </div>
+
+        <!-- hidden attribution fields, populated by JS from URL params -->
+        <input type="hidden" name="utm_source" id="utm_source">
+        <input type="hidden" name="utm_medium" id="utm_medium">
+        <input type="hidden" name="utm_campaign" id="utm_campaign">
+        <input type="hidden" name="utm_term" id="utm_term">
+        <input type="hidden" name="gclid" id="gclid">
+        <input type="hidden" name="page_url" id="page_url">
+
+        <label class="consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <span>I authorize DLF Aureva &amp; its representatives to contact me via Call, SMS, WhatsApp or Email regarding this project, overriding my registration under NDNC/DND.</span>
+        </label>
+
+        <button type="submit" class="btn btn-gold btn-block">Download Brochure &amp; Price List</button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+        <h3>Thank you!</h3>
+        <p style="font-size:14px;color:#5b5648;">Our senior living specialist will call you shortly with the brochure and current price list.</p>
+      </div>
+
+      <div class="micro-trust">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+        100% confidential. No spam calls.
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div><div class="num">75+</div><div class="lbl">Years of DLF Legacy</div></div>
+    <div><div class="num">172</div><div class="lbl">Exclusive Residences</div></div>
+    <div><div class="num">4,200</div><div class="lbl">Sq.Ft. — Largest in NCR</div></div>
+    <div><div class="num">5</div><div class="lbl">Acre Private Zone</div></div>
+  </div>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="text-align:center;">Why DLF Aureva</div>
+      <h2>Built for Life's Most Rewarding Chapter</h2>
+      <p>A rare address that combines DLF's development legacy, thoughtful senior-friendly design and dedicated on-site healthcare.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.65-9.5 9-9.5 9z"/></svg></div>
+        <h3>Healthcare, On Campus</h3>
+        <p>A dedicated on-site medical facility in partnership with Medanta — The Medicity, with 24/7 emergency response and on-call doctors.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg></div>
+        <h3>Spacious by Design</h3>
+        <p>4 BHK + Utility layouts up to 4,200 sq.ft. — among the largest senior-living residences anywhere in NCR.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+        <h3>A Name You Can Trust</h3>
+        <p>Developed within DLF Arbour's master-planned campus — backed by DLF's 75+ year legacy of landmark developments.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/></svg></div>
+        <h3>Privacy &amp; Prestige</h3>
+        <p>A dedicated 5-acre zone within the campus, housed in a single G+47 storey tower with only 172 residences.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Prime Connectivity</h3>
+        <p>Located on Golf Course Extension Road with easy access to NH-48, Sohna Road, hospitals, malls and the golf belt.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="7" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.2 1.3-4.1 3-5"/></svg></div>
+        <h3>A Curated Community</h3>
+        <p>Live among like-minded residents with planned wellness, social and recreational programming built into daily life.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="location" class="location">
+  <div class="wrap loc-grid">
+    <div>
+      <div class="eyebrow">Location</div>
+      <h2>Sector 63, Golf Course Extension Road</h2>
+      <p style="color:#544f40;">DLF Aureva occupies a dedicated 5-acre zone within DLF Arbour's 25-acre master-planned campus — one of Gurugram's most established and well-connected addresses.</p>
+      <ul class="loc-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg> Direct access to Golf Course Extension Road &amp; NH-48</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.65-9.5 9-9.5 9z"/></svg> Close to leading hospitals, including Medanta</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V4h8v3"/></svg> Minutes from premium malls, dining &amp; retail</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> Well connected to Sohna Road, Golf Course Road &amp; IGI Airport</li>
+      </ul>
+    </div>
+    <div class="loc-panel">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+        <circle cx="12" cy="12" r="9" stroke-dasharray="2 3"/>
+        <path d="M12 3v3M12 18v3M3 12h3M18 12h3"/>
+        <circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/>
+        <path d="M12 12l5-3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="amenities">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="text-align:center;">Amenities</div>
+      <h2>Everyday Comfort, Thoughtfully Planned</h2>
+    </div>
+    <div class="amen-grid">
+      <div class="amen-item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.35-9.5-9A5.5 5.5 0 0112 6a5.5 5.5 0 019.5 6c-2.5 4.65-9.5 9-9.5 9z"/></svg><span>On-Site Medical Centre</span></div>
+      <div class="amen-item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20h16M6 20V10M18 20V10M4 10l8-6 8 6"/></svg><span>Community Clubhouse</span></div>
+      <div class="amen-item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 20c3-8 15-8 18 0M12 4v6"/></svg><span>Landscaped Gardens</span></div>
+      <div class="amen-item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg><span>Wellness &amp; Rehab Centre</span></div>
+      <div class="amen-item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19h16M6 19V9l6-4 6 4v10"/></svg><span>Fine Dining &amp; Café</span></div>
+      <div class="amen-item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg><span>24/7 Security &amp; Concierge</span></div>
+      <div class="amen-item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>24/7 Emergency Response</span></div>
+      <div class="amen-item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="8" cy="12" r="2"/><path d="M14 10h4M14 14h4"/></svg><span>Multi-Level Parking</span></div>
+      <div class="amen-item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span>Dedicated Care Staff</span></div>
+      <div class="amen-item"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="7" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.2 1.3-4.1 3-5"/></svg><span>Recreation &amp; Social Zones</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="configuration" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="config-band">
+      <div>
+        <div class="eyebrow" style="color:var(--gold-soft);">Configuration</div>
+        <h2>4 BHK + Utility Residences</h2>
+        <p style="color:#c9c3b1;">Every residence at DLF Aureva is designed for gracious, senior-friendly living — with wider doorways, accessible layouts and premium finishes throughout.</p>
+        <ul class="config-list">
+          <li><span>Configuration</span><span>4 BHK + Utility</span></li>
+          <li><span>Approx. Size</span><span>Up to 4,200 sq.ft.</span></li>
+          <li><span>Tower</span><span>Single Tower, G+47 Storeys</span></li>
+          <li><span>Total Residences</span><span>172</span></li>
+          <li><span>Exclusive Zone</span><span>5 Acres within DLF Arbour</span></li>
+        </ul>
+        <a href="#enquire" class="btn btn-gold">Request Floor Plans &amp; Pricing</a>
+      </div>
+      <div class="config-card">
+        <h3>Why families are registering early</h3>
+        <p>✓ Priority allotment before public launch</p>
+        <p>✓ Early-bird pricing &amp; flexible payment plans</p>
+        <p>✓ One-on-one consultation with our senior living specialist</p>
+        <p>✓ Guided site visit to the DLF Arbour campus</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:800px;">
+    <div class="section-head">
+      <div class="eyebrow" style="text-align:center;">FAQ</div>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q">What configurations are available at DLF Aureva?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>DLF Aureva offers 4 BHK + Utility residences with a super area of up to approximately 4,200 sq.ft., among the largest senior-living homes in NCR.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is healthcare available on-site?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Yes. The campus includes an on-site medical facility in partnership with Medanta — The Medicity, along with 24/7 emergency response and on-call doctors.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Where exactly is the project located?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>DLF Aureva is located in Sector 63 on Golf Course Extension Road, Gurugram, within DLF Arbour's master-planned campus.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What is the RERA registration status?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>RERA registration details will be published here once approved by the competent authority. Please speak with our sales team for the latest status.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How do I book a site visit?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><p>Fill out the enquiry form on this page or call our sales team directly — a specialist will arrange a guided visit to the campus at your convenience.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="final-cta">
+      <h2>Reserve Your Priority Consultation</h2>
+      <p>Limited residences. Register today to receive the brochure, floor plans and current price list before public launch.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+        <a href="#enquire" class="btn" style="background:#fff;color:var(--gold-2);">Get Priority Access</a>
+        <a href="tel:+911244567890" class="btn btn-outline">Call +91-124-456-7890</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">DLF · AUREVA</div>
+    <p style="max-width:640px;">DLF Aureva — Independent Senior Living Residences, Sector 63, Golf Course Extension Road, Gurugram. A DLF Arbour Campus Development.</p>
+    <p>Sales Enquiries: <a href="tel:+911244567890">+91-124-456-7890</a> · <a href="mailto:sales@example.com">sales@example.com</a></p>
+    <div class="disclaimer">
+      This page is for information purposes only and does not constitute an offer, invitation, or contract of any kind. Images, layouts, specifications, amenities and dimensions shown are indicative/conceptual and subject to change as approved by the competent authorities. RERA Registration No.: [TO BE UPDATED PRIOR TO PUBLISHING]. Prospective buyers are advised to independently verify all details, including RERA status, at <a href="https://haryanarera.gov.in" target="_blank" rel="noopener">haryanarera.gov.in</a> before making any booking decision. &copy; <span id="year"></span> DLF Aureva. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a href="tel:+911244567890" class="btn btn-outline" style="border-color:#e9e4d6;color:#fff;">Call Now</a>
+  <a href="#enquire" class="btn btn-gold">Enquire Now</a>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Populate mobile nav
+  var mnav = document.getElementById('mnav');
+  var links = document.querySelectorAll('.nav-links a');
+  links.forEach(function(a){
+    var clone = a.cloneNode(true);
+    clone.style.padding = '10px 4px';
+    clone.style.borderBottom = '1px solid rgba(0,0,0,.08)';
+    clone.addEventListener('click', function(){ mnav.style.display = 'none'; });
+    mnav.appendChild(clone);
+  });
+  document.getElementById('hamburgerBtn').addEventListener('click', function(){
+    mnav.style.display = (mnav.style.display === 'none' || !mnav.style.display) ? 'flex' : 'none';
+  });
+
+  // Capture UTM / gclid params for ad attribution
+  var qs = new URLSearchParams(window.location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_term','gclid'].forEach(function(key){
+    var el = document.getElementById(key);
+    if (el) el.value = qs.get(key) || '';
+  });
+  var pageUrlEl = document.getElementById('page_url');
+  if (pageUrlEl) pageUrlEl.value = window.location.href;
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click', function(){
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Form validation + submit
+  var form = document.getElementById('enquiryForm');
+  var success = document.getElementById('formSuccess');
+
+  function setError(fieldName, hasError){
+    var wrap = form.querySelector('[data-field="' + fieldName + '"]');
+    if (wrap) wrap.classList.toggle('error', hasError);
+  }
+
+  function validate(){
+    var ok = true;
+    var name = form.name.value.trim();
+    var phone = form.phone.value.trim();
+    var email = form.email.value.trim();
+
+    var nameOk = name.length > 1;
+    setError('name', !nameOk); if (!nameOk) ok = false;
+
+    var phoneOk = /^[6-9]\d{9}$/.test(phone.replace(/\D/g,''));
+    setError('phone', !phoneOk); if (!phoneOk) ok = false;
+
+    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    setError('email', !emailOk); if (!emailOk) ok = false;
+
+    return ok;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!validate()) return;
+
+    var submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    // TODO: replace with your CRM / lead-capture endpoint (Google Sheets webhook, HubSpot, Zoho, etc.)
+    var LEAD_ENDPOINT = '';
+    var payload = Object.fromEntries(new FormData(form).entries());
+
+    function showSuccess(){
+      form.classList.add('hide');
+      success.classList.add('show');
+      // Google Ads conversion tracking — replace AW-CONVERSION_ID / LABEL with your own
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', { 'send_to': 'AW-CONVERSION_ID/LABEL' });
+      }
+    }
+
+    if (LEAD_ENDPOINT) {
+      fetch(LEAD_ENDPOINT, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(payload)
+      }).then(showSuccess).catch(function(){
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Download Brochure & Price List';
+        alert('Something went wrong. Please call us directly at +91-124-456-7890.');
+      });
+    } else {
+      // No endpoint configured yet — show success so UX can be tested end-to-end.
+      setTimeout(showSuccess, 400);
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
