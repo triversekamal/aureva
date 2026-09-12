@@ -252,6 +252,40 @@
   .lifestyle h2{color:#fff;}
   .lifestyle p{color:#e2dfd4;font-size:16.5px;}
 
+  /* Gallery */
+  .gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .gallery-item{
+    position:relative;overflow:hidden;
+    border-radius:12px;border:1px solid var(--line);
+    aspect-ratio:4/3;cursor:pointer;
+    padding:0;background:none;display:block;width:100%;
+  }
+  .gallery-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease;}
+  .gallery-item:hover img{transform:scale(1.04);}
+  .gallery-item .gallery-label{
+    position:absolute;left:14px;bottom:14px;
+    color:#fff;font-size:13px;font-weight:600;
+    background:rgba(10,10,8,.55);padding:6px 12px;border-radius:999px;
+  }
+
+  /* Lightbox */
+  .lightbox-overlay{
+    position:fixed;inset:0;z-index:210;
+    background:rgba(10,10,8,.85);
+    display:flex;align-items:center;justify-content:center;
+    padding:28px;
+  }
+  .lightbox-overlay[hidden]{display:none;}
+  .lightbox-overlay img{max-width:100%;max-height:100%;border-radius:8px;display:block;}
+  .lightbox-close{
+    position:absolute;top:20px;right:20px;
+    width:40px;height:40px;border-radius:8px;
+    border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);
+    color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;
+  }
+  .lightbox-close:hover{background:rgba(255,255,255,.2);}
+  .lightbox-close svg{width:18px;height:18px;}
+
   /* Configuration */
   .config-band{
     background:var(--ink);
@@ -329,6 +363,7 @@
     .hamburger{display:block;}
     .why-grid{grid-template-columns:1fr;}
     .amen-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:1fr;}
     section{padding:56px 0;}
     .mobile-bar{display:flex;}
     body{padding-bottom:66px;}
@@ -351,6 +386,7 @@
     <nav class="nav-links">
       <a href="#why">Overview</a>
       <a href="#amenities">Amenities</a>
+      <a href="#gallery">Gallery</a>
       <a href="#location">Location</a>
       <a href="#configuration">Configuration</a>
       <a href="#faq">FAQ</a>
@@ -555,6 +591,26 @@
   </div>
 </section>
 
+<section id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gallery</div>
+      <h2>A glimpse of life at DLF Aureva</h2>
+      <p>A preview of the setting and community DLF Aureva is designed around.</p>
+    </div>
+    <div class="gallery-grid">
+      <button type="button" class="gallery-item" data-lightbox="banner.jpg" data-caption="Tree-lined pathways within the campus">
+        <img src="banner.jpg" alt="Residents cycling along a tree-lined path within the campus" loading="lazy" decoding="async">
+        <span class="gallery-label">The campus grounds</span>
+      </button>
+      <button type="button" class="gallery-item" data-lightbox="paralax.jpg" data-caption="Residents gathering for a community celebration">
+        <img src="paralax.jpg" alt="Residents gathered for a poolside community celebration" loading="lazy" decoding="async">
+        <span class="gallery-label">Community life</span>
+      </button>
+    </div>
+  </div>
+</section>
+
 <section id="configuration" style="background:var(--paper-2);">
   <div class="wrap">
     <div class="config-band">
@@ -703,6 +759,13 @@
   </div>
 </div>
 
+<div class="lightbox-overlay" id="lightboxOverlay" hidden>
+  <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
 <script>
 (function(){
   "use strict";
@@ -835,8 +898,42 @@
   modalOverlay.addEventListener('click', function(e){
     if (e.target === modalOverlay) closeModal();
   });
+
+  // Gallery lightbox
+  var lightboxOverlay = document.getElementById('lightboxOverlay');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lastFocusedLightbox = null;
+
+  function openLightbox(src, caption){
+    lastFocusedLightbox = document.activeElement;
+    lightboxImg.src = src;
+    lightboxImg.alt = caption || '';
+    lightboxOverlay.hidden = false;
+    document.body.classList.add('modal-open');
+    document.getElementById('lightboxClose').focus();
+  }
+
+  function closeLightbox(){
+    lightboxOverlay.hidden = true;
+    lightboxImg.src = '';
+    document.body.classList.remove('modal-open');
+    if (lastFocusedLightbox && typeof lastFocusedLightbox.focus === 'function') lastFocusedLightbox.focus();
+  }
+
+  document.querySelectorAll('[data-lightbox]').forEach(function(el){
+    el.addEventListener('click', function(){
+      openLightbox(el.getAttribute('data-lightbox'), el.getAttribute('data-caption'));
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightboxOverlay.addEventListener('click', function(e){
+    if (e.target === lightboxOverlay) closeLightbox();
+  });
+
   document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape' && !modalOverlay.hidden) closeModal();
+    if (e.key !== 'Escape') return;
+    if (!lightboxOverlay.hidden) closeLightbox();
+    else if (!modalOverlay.hidden) closeModal();
   });
 })();
 </script>
