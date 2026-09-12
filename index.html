@@ -146,7 +146,39 @@
   .form-success.show{display:block;}
   .form-success svg{width:40px;height:40px;color:var(--accent);margin:0 auto 12px;}
   .form-success h3{margin-bottom:6px;font-size:19px;}
-  #enquiryForm.hide{display:none;}
+  .hide{display:none;}
+
+  /* Modal */
+  .modal-overlay{
+    position:fixed;inset:0;z-index:200;
+    background:rgba(10,10,8,.6);
+    display:flex;align-items:center;justify-content:center;
+    padding:20px;
+  }
+  .modal-overlay[hidden]{display:none;}
+  .modal{
+    position:relative;
+    background:var(--paper);
+    border-radius:16px;
+    padding:30px 26px 24px;
+    max-width:440px;width:100%;
+    max-height:calc(100vh - 40px);
+    overflow-y:auto;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.5);
+  }
+  .modal h2{font-size:20px;margin-bottom:2px;}
+  .modal .sub{font-size:13.5px;color:var(--muted);margin-bottom:18px;}
+  .modal-close{
+    position:absolute;top:14px;right:14px;
+    width:32px;height:32px;
+    border:1px solid var(--line);border-radius:8px;
+    background:#fff;color:var(--muted);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+  }
+  .modal-close svg{width:16px;height:16px;}
+  .modal-close:hover{background:var(--paper-2);color:var(--ink);}
+  body.modal-open{overflow:hidden;}
 
   /* Stats strip */
   .stats{border-bottom:1px solid var(--line);padding:28px 0;}
@@ -325,7 +357,7 @@
     </nav>
     <div class="nav-cta">
       <a class="nav-phone" href="tel:+911244567890">+91-124-456-7890</a>
-      <a class="btn btn-primary" href="#enquire" style="padding:10px 20px;font-size:13.5px;">Enquire Now</a>
+      <button type="button" class="btn btn-primary" data-open-modal style="padding:10px 20px;font-size:13.5px;">Enquire Now</button>
     </div>
     <button class="hamburger" aria-label="Menu" id="hamburgerBtn">
       <span></span><span></span><span></span>
@@ -519,7 +551,7 @@
     <div class="eyebrow">Community</div>
     <h2>Life that feels like family</h2>
     <p>From weekend get-togethers to festive celebrations, DLF Aureva is built around a calendar of social, cultural and wellness programming — so every day brings a reason to step outside your door.</p>
-    <a href="#enquire" class="btn btn-primary">Get priority access</a>
+    <button type="button" class="btn btn-primary" data-open-modal>Get priority access</button>
   </div>
 </section>
 
@@ -537,7 +569,7 @@
           <li><span>Total residences</span><span>172</span></li>
           <li><span>Exclusive zone</span><span>5 acres within DLF Arbour</span></li>
         </ul>
-        <a href="#enquire" class="btn btn-primary">Request floor plans &amp; pricing</a>
+        <button type="button" class="btn btn-primary" data-open-modal>Request floor plans &amp; pricing</button>
       </div>
       <div class="config-card">
         <h3>Why families are registering early</h3>
@@ -587,7 +619,7 @@
       <h2>Reserve your priority consultation</h2>
       <p>Limited residences. Register today to receive the brochure, floor plans and current price list before public launch.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="#enquire" class="btn btn-primary">Get priority access</a>
+        <button type="button" class="btn btn-primary" data-open-modal>Get priority access</button>
         <a href="tel:+911244567890" class="btn btn-outline">Call +91-124-456-7890</a>
       </div>
     </div>
@@ -607,7 +639,68 @@
 
 <div class="mobile-bar">
   <a href="tel:+911244567890" class="btn btn-outline">Call now</a>
-  <a href="#enquire" class="btn btn-primary">Enquire now</a>
+  <button type="button" class="btn btn-primary" data-open-modal>Enquire now</button>
+</div>
+
+<div class="modal-overlay" id="modalOverlay" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button type="button" class="modal-close" id="modalClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+    <h2 id="modalTitle">Get priority access</h2>
+    <p class="sub">Register now for exclusive launch pricing &amp; floor plans.</p>
+
+    <form id="modalForm" novalidate>
+      <div class="field" data-field="name">
+        <label for="m-name">Full name</label>
+        <input id="m-name" name="name" type="text" autocomplete="name" placeholder="Enter your full name" required>
+        <div class="err-msg">Please enter your name.</div>
+      </div>
+      <div class="field" data-field="phone">
+        <label for="m-phone">Mobile number</label>
+        <input id="m-phone" name="phone" type="tel" autocomplete="tel" placeholder="10-digit mobile number" inputmode="numeric" required>
+        <div class="err-msg">Please enter a valid 10-digit mobile number.</div>
+      </div>
+      <div class="field" data-field="email">
+        <label for="m-email">Email address</label>
+        <input id="m-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <div class="err-msg">Please enter a valid email address.</div>
+      </div>
+      <div class="field">
+        <label for="m-interest">Configuration of interest</label>
+        <select id="m-interest" name="interest">
+          <option value="4bhk_utility">4 BHK + Utility (~4,200 sq.ft.)</option>
+          <option value="not_sure">Not sure yet — send me all details</option>
+        </select>
+      </div>
+
+      <!-- hidden attribution fields, populated by JS from URL params -->
+      <input type="hidden" name="utm_source">
+      <input type="hidden" name="utm_medium">
+      <input type="hidden" name="utm_campaign">
+      <input type="hidden" name="utm_term">
+      <input type="hidden" name="gclid">
+      <input type="hidden" name="page_url">
+
+      <label class="consent">
+        <input type="checkbox" id="m-consent" name="consent" required>
+        <span>I authorize DLF Aureva &amp; its representatives to contact me via call, SMS, WhatsApp or email regarding this project, overriding my registration under NDNC/DND.</span>
+      </label>
+
+      <button type="submit" class="btn btn-primary btn-block">Download brochure &amp; price list</button>
+    </form>
+
+    <div class="form-success" id="modalFormSuccess">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
+      <h3>Thank you!</h3>
+      <p style="font-size:14px;color:var(--muted);">Our senior living specialist will call you shortly with the brochure and current price list.</p>
+    </div>
+
+    <div class="micro-trust">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+      100% confidential. No spam calls.
+    </div>
+  </div>
 </div>
 
 <script>
@@ -630,14 +723,16 @@
     mnav.style.display = (mnav.style.display === 'none' || !mnav.style.display) ? 'flex' : 'none';
   });
 
-  // Capture UTM / gclid params for ad attribution
+  // Capture UTM / gclid params for ad attribution — populate every matching field on the page
   var qs = new URLSearchParams(window.location.search);
   ['utm_source','utm_medium','utm_campaign','utm_term','gclid'].forEach(function(key){
-    var el = document.getElementById(key);
-    if (el) el.value = qs.get(key) || '';
+    document.querySelectorAll('[name="' + key + '"]').forEach(function(el){
+      el.value = qs.get(key) || '';
+    });
   });
-  var pageUrlEl = document.getElementById('page_url');
-  if (pageUrlEl) pageUrlEl.value = window.location.href;
+  document.querySelectorAll('[name="page_url"]').forEach(function(el){
+    el.value = window.location.href;
+  });
 
   // FAQ accordion
   document.querySelectorAll('.faq-item').forEach(function(item){
@@ -648,68 +743,100 @@
     });
   });
 
-  // Form validation + submit
-  var form = document.getElementById('enquiryForm');
-  var success = document.getElementById('formSuccess');
+  // Form validation + submit — shared by the inline hero form and the modal form
+  function bindForm(form, success){
+    function setError(fieldName, hasError){
+      var wrap = form.querySelector('[data-field="' + fieldName + '"]');
+      if (wrap) wrap.classList.toggle('error', hasError);
+    }
 
-  function setError(fieldName, hasError){
-    var wrap = form.querySelector('[data-field="' + fieldName + '"]');
-    if (wrap) wrap.classList.toggle('error', hasError);
-  }
+    function validate(){
+      var ok = true;
+      var name = form.name.value.trim();
+      var phone = form.phone.value.trim();
+      var email = form.email.value.trim();
 
-  function validate(){
-    var ok = true;
-    var name = form.name.value.trim();
-    var phone = form.phone.value.trim();
-    var email = form.email.value.trim();
+      var nameOk = name.length > 1;
+      setError('name', !nameOk); if (!nameOk) ok = false;
 
-    var nameOk = name.length > 1;
-    setError('name', !nameOk); if (!nameOk) ok = false;
+      var phoneOk = /^[6-9]\d{9}$/.test(phone.replace(/\D/g,''));
+      setError('phone', !phoneOk); if (!phoneOk) ok = false;
 
-    var phoneOk = /^[6-9]\d{9}$/.test(phone.replace(/\D/g,''));
-    setError('phone', !phoneOk); if (!phoneOk) ok = false;
+      var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      setError('email', !emailOk); if (!emailOk) ok = false;
 
-    var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    setError('email', !emailOk); if (!emailOk) ok = false;
+      return ok;
+    }
 
-    return ok;
-  }
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!validate()) return;
 
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if (!validate()) return;
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalLabel = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
 
-    var submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Submitting...';
+      // TODO: replace with your CRM / lead-capture endpoint (Google Sheets webhook, HubSpot, Zoho, etc.)
+      var LEAD_ENDPOINT = '';
+      var payload = Object.fromEntries(new FormData(form).entries());
 
-    // TODO: replace with your CRM / lead-capture endpoint (Google Sheets webhook, HubSpot, Zoho, etc.)
-    var LEAD_ENDPOINT = '';
-    var payload = Object.fromEntries(new FormData(form).entries());
-
-    function showSuccess(){
-      form.classList.add('hide');
-      success.classList.add('show');
-      // Google Ads conversion tracking — replace AW-CONVERSION_ID / LABEL with your own
-      if (typeof gtag === 'function') {
-        gtag('event', 'conversion', { 'send_to': 'AW-CONVERSION_ID/LABEL' });
+      function showSuccess(){
+        form.classList.add('hide');
+        success.classList.add('show');
+        // Google Ads conversion tracking — replace AW-CONVERSION_ID / LABEL with your own
+        if (typeof gtag === 'function') {
+          gtag('event', 'conversion', { 'send_to': 'AW-CONVERSION_ID/LABEL' });
+        }
       }
-    }
 
-    if (LEAD_ENDPOINT) {
-      fetch(LEAD_ENDPOINT, {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify(payload)
-      }).then(showSuccess).catch(function(){
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Download brochure & price list';
-        alert('Something went wrong. Please call us directly at +91-124-456-7890.');
-      });
-    } else {
-      // No endpoint configured yet — show success so UX can be tested end-to-end.
-      setTimeout(showSuccess, 400);
-    }
+      if (LEAD_ENDPOINT) {
+        fetch(LEAD_ENDPOINT, {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        }).then(showSuccess).catch(function(){
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+          alert('Something went wrong. Please call us directly at +91-124-456-7890.');
+        });
+      } else {
+        // No endpoint configured yet — show success so UX can be tested end-to-end.
+        setTimeout(showSuccess, 400);
+      }
+    });
+  }
+
+  bindForm(document.getElementById('enquiryForm'), document.getElementById('formSuccess'));
+  bindForm(document.getElementById('modalForm'), document.getElementById('modalFormSuccess'));
+
+  // Popup modal — opened from every CTA button except the hero's own inline form
+  var modalOverlay = document.getElementById('modalOverlay');
+  var lastFocused = null;
+
+  function openModal(){
+    lastFocused = document.activeElement;
+    modalOverlay.hidden = false;
+    document.body.classList.add('modal-open');
+    var firstField = document.getElementById('m-name');
+    if (firstField) firstField.focus();
+  }
+
+  function closeModal(){
+    modalOverlay.hidden = true;
+    document.body.classList.remove('modal-open');
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  }
+
+  document.querySelectorAll('[data-open-modal]').forEach(function(btn){
+    btn.addEventListener('click', openModal);
+  });
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  modalOverlay.addEventListener('click', function(e){
+    if (e.target === modalOverlay) closeModal();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && !modalOverlay.hidden) closeModal();
   });
 })();
 </script>
